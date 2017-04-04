@@ -6,8 +6,7 @@ var Prism = require('prismjs');
 
 module.exports = function (content) {
   this.cacheable();
-
-  var query = loaderUtils.getOptions(this);
+  var query = loaderUtils.parseQuery(this.query);
   if (!query.language) {
     throw new Error('You must provide a `language` query parameter');
   }
